@@ -25,8 +25,11 @@ export class RegisterComponent implements OnInit {
   private _initUserForm(){
     this.form = this.formBuilder.group({
       name: ['',Validators.required],
-      password: ['', Validators.required],
-      role: [''],
+      email: ['',Validators.required],
+      hashedPassword: ['', Validators.required],
+      phone: [''],
+      isAdmin: [],
+      address: ['']
     })
   }
 
@@ -50,8 +53,11 @@ export class RegisterComponent implements OnInit {
     }
     const user: Users = {
       name: this.form.value.name,
-      password: this.form.value.password,
-      role: this.form.value.role
+      email: this.form.value.email,
+      hashedPassword: this.form.value.hashedPassword,
+      phone: '',
+      isAdmin: false,
+      address: ''
     }
     this._addUser(user);
     this.route.navigate(['/login']);

@@ -13,6 +13,7 @@ export class AuthguardGuard implements CanActivate {
 
 
     const token = this.localstorageService.getToken();
+    console.log(token);
     if (token) {
       const DecodedToken = JSON.parse(atob(token.split('.')[1]));
       console.log(DecodedToken.exp);

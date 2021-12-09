@@ -5,7 +5,7 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="text-center">
-                            <h1>SignUp</h1>
+                            <h1><u>SignUp</u></h1>
                             <h6>Register Now</h6>
                         </div>
                         <form>
@@ -17,19 +17,26 @@
                                         <small style="color: red;" class="p-error" *ngIf="this.form.controls['name'].invalid&&isSubmitted">Name is required</small>
                                 </div>
                                 <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input formControlName="password" type="password" class="form-control" id="password"
+                                    <label for="email">Email</label>
+                                    <input formControlName="email" type="email" class="form-control" id="email"
+                                        placeholder="Enter Email">
+                                        <small style="color: red;" class="p-error" *ngIf="this.form.controls['email'].invalid&&isSubmitted">Email is required</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="hashedPassword">Password</label>
+                                    <input formControlName="hashedPassword" type="password" class="form-control" id="hashedPassword"
                                         placeholder="Password">
                                     <small id="emailHelp" class="form-text text-muted">We'll never share your details
                                         with anyone
                                         else.</small>
-                                        <small style="color: red;" class="p-error" *ngIf="this.form.controls['password'].invalid&&isSubmitted">Password is required</small>
+                                        <small style="color: red;" class="p-error" *ngIf="this.form.controls['hashedPassword'].invalid&&isSubmitted">Password is required</small>
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label for="role">Role</label>
                                     <input formControlName="role" type="text" class="form-control" id="role"
                                         placeholder="Enter role">
-                                </div>
+                                </div> -->
+                    
                                 <button type="submit" class="btn btn-primary">Sign Up</button>
                                 <div *ngIf="isSubmitted&&authError" style="padding-left: 130px;"><small style="color: rgb(216, 5, 5);">{{AuthMessage}}</small></div>
                             </form>

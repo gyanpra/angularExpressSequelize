@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { LocalstorageService } from './localstorage.service';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -21,8 +22,8 @@ export class UsersService {
   }
 
 
-  login(name: string, password: string): Observable<Users> {
-    return this.http.post<Users>(this.baselogin, { name, password });
+  login(email: string, hashedPassword: string): Observable<Users> {
+    return this.http.post<Users>(this.baselogin, { email, hashedPassword });
   }
 
   logOut(){
